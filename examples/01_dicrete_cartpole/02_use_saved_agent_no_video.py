@@ -1,8 +1,5 @@
-import ray
-import pyglet
-from ray.rllib.agents.ppo.ppo import PPOTrainer
 import gym
-from gym.wrappers import RecordVideo
+from ray.rllib.agents.ppo.ppo import PPOTrainer
 
 # pip install ffmpeg
 # pip install imageio-ffmpeg

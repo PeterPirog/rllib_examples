@@ -1,0 +1,25 @@
+# https://github.com/ray-project/ray/blob/master/rllib/tuned_examples/ppo/cartpole-ppo-hyperband.yaml
+# rllib train -f examples/yaml_files/cartpole-ppo-hyperband.yaml
+# tensorboard --bind_all --port=12301 --logdir /home/ppirog/projects/rllib_examples/Pendulum-v1/cartpole-ppo
+# kill $(ps -e | grep 'tensorboard' | awk '{print $1}')
+
+
+cartpole-ppo:
+    env: CartPole-v0
+    run: PPO
+    num_samples: 3
+    stop:
+        episode_reward_mean: 200
+        time_total_s: 1800
+    config:
+        # Works for both torch and tf.
+        framework: tf2
+        num_workers: 10
+        num_sgd_iter:
+            grid_search: [1, 4]
+        sgd_minibatch_size:
+            grid_search: [128, 256, 512]
+        observation_filter: MeanStdFilter
+    local_dir: Pendulum-v1
+    checkpoint_freq: 2
+    keep_checkpoints_num: 3

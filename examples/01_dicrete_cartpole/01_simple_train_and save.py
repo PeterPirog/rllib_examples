@@ -3,8 +3,13 @@ from ray import tune
 if __name__ == '__main__':
     tune.run("PPO",
              config={"env": "CartPole-v1",
-                     "evaluation_interval": 2,
-                     "evaluation_num_episodes": 20},
+                     "env_config": {},  # config to pass to env class
+                     "framework": "tf2",
+                     "num_gpus": 0,
+                     "num_workers": 63,
+                     #"evaluation_interval": 2,
+                     #"evaluation_num_episodes": 20
+                     },
              #resources_per_trial={"cpu": 8, "gpu": 0},
              local_dir="cartpole_v1",  # directory to save results
              checkpoint_freq=2,  # frequency between checkpoints
