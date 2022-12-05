@@ -10,7 +10,7 @@ if __name__ == '__main__':
                      "num_workers": 4,
                      #"gamma": tune.grid_search([0.9, 0.95, 0.99]),
                      "gamma": 0.99,
-                     "lr": tune.grid_search([0.01, 0.001, 0.0001]),
+                     #"lr": tune.grid_search([0.01, 0.001, 0.0001]),
                      "evaluation_interval": 2,
                      "evaluation_num_episodes": 100,
                      "log_level": "WARN" #

@@ -1,0 +1,11 @@
+{
+  "env": "CartPole-v1",
+  "evaluation_interval": 2,
+  "evaluation_num_episodes": 100,
+  "framework": "tf2",
+  "gamma": 0.99,
+  "log_level": "WARN",
+  "lr": 0.0001,
+  "num_gpus": 0,
+  "num_workers": 4
+}
