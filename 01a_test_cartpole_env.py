@@ -28,7 +28,7 @@ if __name__ == "__main__":
         for step in range(200):  # H
             action = basic_policy(obs)  # I
             obs, reward, done, info = env.step(action)  # J
-            # env.render() # K
+            #env.render() # K
             episode_rewards += reward  # L
             if done:  # M
                 break
