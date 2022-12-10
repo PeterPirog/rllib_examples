@@ -9,8 +9,7 @@ import tensorflow as tf
 
 
 if __name__ == '__main__':
-    gpu_available = tf.test.is_gpu_available()
-    print(gpu_available)
+    print(tf.test.is_gpu_available())
 
     #is_cuda_gpu_available = tf.test.is_gpu_available(cuda_only=True)
     #is_cuda_gpu_min_3 = tf.test.is_gpu_available(True, (3, 0))
@@ -30,3 +29,4 @@ if __name__ == '__main__':
 
     #print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
     #device_lib.list_local_devices()
+    # docker run -it  --rm --gpus all peterpirogtf/rllib210:gpu python -c "import tensorflow as tf;print(tf.test.is_gpu_available())"

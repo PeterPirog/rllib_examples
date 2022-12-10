@@ -51,4 +51,4 @@ B - bacic_policy it's the function which decide what action should be taken in s
     in this case the result is random action ( integer from range from 0 to 3)
 """
 
-# rllib train --env=PongDeterministic-v4 --run=PPO --config '{"num_workers": 4}'
+# rllib train --env=HumanoidStandup-v2 --run=PPO --config '{"num_workers": 4}'

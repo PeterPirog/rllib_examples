@@ -1,5 +1,6 @@
 #Use existing docker image as a base
-# Docker commands https://docs.docker.com/engine/reference/builder/
+# Docker  Dokerfile commands https://docs.docker.com/engine/reference/builder/
+# Docker run commands https://docs.docker.com/engine/reference/commandline/run/
 FROM tensorflow/tensorflow:2.11.0-gpu
 LABEL maintainer="peterpirogtf@gmail.com"
 ARG GYM_VERSION=0.23.1
@@ -58,7 +59,7 @@ RUN pip install "gym[mujoco]"==$GYM_VERSION
 
 WORKDIR /
 RUN pip freeze >> requirements.txt
-COPY ./Dockerfile ./
+COPY Dockerfile ./
 RUN apt-get autoremove -y
 
 
